@@ -13,6 +13,7 @@ namespace FirstTask.Pages
     //public class Login : CommonDriver
     public class LoginPage
     {
+        IWebDriver driver = new ChromeDriver();
 
         //Method to Login
         public void LoginSteps(IWebDriver driver)
@@ -27,9 +28,9 @@ namespace FirstTask.Pages
             IWebElement SignInButton = driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));
             SignInButton.Click();
             IWebElement UserNameTextbox = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[1]/input"));
-            UserNameTextbox.SendKeys("poojasaini31@gmail.com");
+            UserNameTextbox.SendKeys("teju.nz@gmail.com");
             IWebElement PasswordTextbox = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[2]/input"));
-            PasswordTextbox.SendKeys("Testing");
+            PasswordTextbox.SendKeys("Password123");
             Thread.Sleep(2000);
             IWebElement LoginButton = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[4]/button"));
             LoginButton.Click();

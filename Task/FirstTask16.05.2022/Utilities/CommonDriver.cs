@@ -10,24 +10,29 @@ namespace FirstTask.Utilities
 {
     public class CommonDriver
     {
-        public IWebDriver driver;
+        private static IWebDriver driver;
+
+        public static IWebDriver Driver { get => driver; set => driver = value; }
 
         public void Initialize()
         {
-            IWebdriver driver = new ChromeDriver();
+            Driver = new ChromeDriver();
         }
 
         public static void UseWait()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
         }
 
         public void Close()
         {
-            driver.Quit();
+            Driver.Quit();
         }
     }
 }
+
+
 
 
 
