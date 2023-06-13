@@ -77,7 +77,7 @@ namespace FirstTask.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add profile name with valid credentials.")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("Pooja", "Saini", null)]
+        [NUnit.Framework.TestCaseAttribute("Tejaswi", "Suraveni", null)]
         public void AddProfileNameWithValidCredentials_(string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

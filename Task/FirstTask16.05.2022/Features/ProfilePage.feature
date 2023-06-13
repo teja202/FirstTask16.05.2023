@@ -13,7 +13,7 @@ Scenario Outline: Add profile name with valid credentials.
 	Then The profile page should display the profile name "<First name>  <Last name>" successfully.
 Examples: 
 | First name | Last name |
-| Pooja      | Saini     |
+| Tejaswi     | Suraveni |
 
 #Scenario: Delete profile name
 #	Given I logged into Mars application successfully
