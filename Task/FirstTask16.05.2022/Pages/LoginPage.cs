@@ -1,11 +1,5 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FirstTask.Utilities;
 
 //namespace Mars_Profile_1.Pages
 namespace FirstTask.Pages
@@ -13,7 +7,7 @@ namespace FirstTask.Pages
     //public class Login : CommonDriver
     public class LoginPage
     {
-        IWebDriver driver = new ChromeDriver();
+        IWebDriver driver = new ChromeDriver(@"C:\\Program Files\\Google\\Chrome\\Application");
 
         //Method to Login
         public void LoginSteps(IWebDriver driver)

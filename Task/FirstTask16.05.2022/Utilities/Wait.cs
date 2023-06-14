@@ -1,69 +1,32 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FirstTask.Utilities
+namespace Automation1.utilities
 {
-    public class wait
+    public class Wait
     {
-        class WaitHelpers
+        public static void waittobeclickable(IWebDriver Driver, string locatortype, string locatorvalue, int seconds)
         {
-            //reusable functions for wait 
-            public static void WaitToBeClickable(IWebDriver driver, string locator, string locatorvalue, int seconds)
+            var Wait = new WebDriverWait(Driver, new TimeSpan(0, 0, seconds));
+
+            if (locatortype == "XPath")
             {
-                var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
-
-                if (locator == "XPath")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(locatorvalue)));
-                }
-                if (locator == "Id")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id(locatorvalue)));
-                }
-
+                Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(locatorvalue)));
             }
-
-            public static void WaitToBeVisible(IWebDriver driver, string locator, string locatorvalue, int seconds)
+            if (locatortype == "Id")
             {
-                var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
-
-                if (locator == "XPath")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(locatorvalue)));
-                }
-                if (locator == "Id")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(locatorvalue)));
-                }
-
+                Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id(locatorvalue)));
             }
-            public static void WaiToBeExistent(IWebDriver driver, string locator, string locatorValue, int seconds)
+            if (locatortype == "Cssselector")
             {
-                var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
-
-                if (locator == "XPath" | locator == "Xpath")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath(locatorValue)));
-                }
-                if (locator == "Id")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id(locatorValue)));
-                }
-                if (locator == "CssSelector")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector(locatorValue)));
-                }
-                if (locator == "Name")
-                {
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Name(locatorValue)));
-
-                }
+                Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.CssSelector(locatorvalue)));
             }
         }
+
     }
 }

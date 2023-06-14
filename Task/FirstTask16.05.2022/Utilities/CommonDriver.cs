@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace FirstTask.Utilities
 {
-    public class CommonDriver
+    public class Commondriver
     {
-        private static IWebDriver driver;
+        public static IWebDriver driver;
 
         public static IWebDriver Driver { get => driver; set => driver = value; }
 
         public void Initialize()
         {
-            Driver = new ChromeDriver();
+            driver = new ChromeDriver();
         }
 
         public static void UseWait()
